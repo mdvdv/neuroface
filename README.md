@@ -19,29 +19,19 @@ NeuroFace is a Python framework containing tools for detection, human face recog
 <a name='001'></a>
 <h2>Environment</h2>
 
-- [`torch`](https://github.com/pytorch/pytorch) >= `1.12.0` PyTorch models implementation and deployment.
+- [`torch`](https://github.com/pytorch/pytorch) >= `1.12.0`: PyTorch models implementation and deployment.
 
-- [`torchvision`](https://github.com/pytorch/vision) >= `0.13.0` Reading and preprocessing frames as torch tensors.
+- [`torchvision`](https://github.com/pytorch/vision) >= `0.13.0`: Reading and preprocessing frames as torch tensors.
 
-- [`mediapipe`](https://github.com/google/mediapipe) >= `0.8.10.1`
+- [`mediapipe`](https://github.com/google/mediapipe) >= `0.8.10.1`: MediaPipe models implementation and deployment.
 
-  > MediaPipe models implementation and deployment.
+- [`opencv-python`](https://github.com/opencv/opencv-python) >= `4.6.0.66`: Reading and preprocessing frames as numpy ndarrays.
 
-- [`opencv-python`](https://github.com/opencv/opencv-python) >= `4.6.0.66`
+- [`Pillow`](https://github.com/python-pillow/Pillow) >= `9.2.0`: Reading and preprocessing frames as PIL Images.
 
-  > Reading and preprocessing frames as numpy ndarrays.
+- [`av`](https://github.com/PyAV-Org/PyAV) >= `9.2.0`: Binding torchvision to ffmpeg to read streams.
 
-- [`Pillow`](https://github.com/python-pillow/Pillow) >= `9.2.0`
-
-  > Reading and preprocessing frames as PIL Images.
-
-- [`av`](https://github.com/PyAV-Org/PyAV) >= `9.2.0`
-
-  > Binding torchvision to ffmpeg to read streams.
-
-- [`gdown`](https://github.com/wkentaro/gdown) >= `4.5.1`
-
-  > Downloading large files from Google Drive.
+- [`gdown`](https://github.com/wkentaro/gdown) >= `4.5.1`: Downloading large files from Google Drive.
 
 <h4>System requirements:</h4>
 
