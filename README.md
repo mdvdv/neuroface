@@ -19,27 +19,47 @@ NeuroFace is a Python framework containing tools for detection, human face recog
 <a name='001'></a>
 <h2>Environment</h2>
 
-- [`torch`](https://github.com/pytorch/pytorch) >= `1.11.0` 
-  
+- [`torch`](https://github.com/pytorch/pytorch) >= `1.12.0`
+
   > PyTorch models implementation and deployment.
 
-- [`torchvision`](https://github.com/pytorch/vision) >= `0.12.0` *Reading and preprocessing frames as torch tensors.*
-- [`mediapipe`](https://github.com/google/mediapipe) >= `0.8.10` *MediaPipe models implementation and deployment.*
-- [`opencv-python`](https://github.com/opencv/opencv-python) >= `4.5.5` *Reading and preprocessing frames as numpy ndarrays.*
-- [`gdown`](https://github.com/wkentaro/gdown) >= `4.5.1` *Downloading large files from Google Drive.*
-- [`Pillow`](https://github.com/python-pillow/Pillow) >= `9.0.1` *Reading and preprocessing frames as PIL images.*
-- [`av`](https://github.com/PyAV-Org/PyAV) >= `9.2.0` *Binding torchvision library to ffmpeg to read streams.*
+- [`torchvision`](https://github.com/pytorch/vision) >= `0.13.0`
+
+  > Reading and preprocessing frames as torch tensors.
+
+- [`mediapipe`](https://github.com/google/mediapipe) >= `0.8.10.1`
+
+  > MediaPipe models implementation and deployment.
+
+- [`opencv-python`](https://github.com/opencv/opencv-python) >= `4.6.0.66`
+
+  > Reading and preprocessing frames as numpy ndarray.
+
+- [`Pillow`](https://github.com/python-pillow/Pillow) >= `9.2.0`
+
+  > Reading and preprocessing frames as PIL images.
+
+- [`av`](https://github.com/PyAV-Org/PyAV) >= `9.2.0`
+
+  > Binding torchvision library to ffmpeg to read streams.
+
+- [`gdown`](https://github.com/wkentaro/gdown) >= `4.5.1`
+
+  > Downloading large files from Google Drive.
 
 System requirements:
-- [`CUDA`](https://developer.nvidia.com/cuda-downloads) >= `10.2` *GPU compute access.*
+- [`CUDA`](https://developer.nvidia.com/cuda-downloads) >= `11.3`
+
+  > GPU compute access.
 
 Quick installation:
+
 ```python
 pip install -r requirements.txt
 ```
 
 <a name='002'></a>
-<h2>Quick Start</h2>
+<h2>Installation</h2>
 
 ```python
 git clone https://github.com/mdvdv/neuroface.git
