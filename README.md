@@ -47,13 +47,13 @@ NeuroFace is a Python framework containing tools for detection, human face recog
 
   > Downloading large files from Google Drive.
 
-<h3>System requirements:</h3>
+<h4>System requirements:</h4>
 
 - [`CUDA`](https://developer.nvidia.com/cuda-downloads) >= `11.3`
 
   > GPU compute access.
 
-<h3>Quick installation:</h3>
+<h4>Quick installation:</h4>
 
 ```python
 pip install -r requirements.txt
