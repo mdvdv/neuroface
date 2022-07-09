@@ -33,15 +33,15 @@ NeuroFace is a Python framework containing tools for detection, human face recog
 
 - [`opencv-python`](https://github.com/opencv/opencv-python) >= `4.6.0.66`
 
-  > Reading and preprocessing frames as numpy ndarray.
+  > Reading and preprocessing frames as numpy ndarrays.
 
 - [`Pillow`](https://github.com/python-pillow/Pillow) >= `9.2.0`
 
-  > Reading and preprocessing frames as PIL images.
+  > Reading and preprocessing frames as PIL Images.
 
 - [`av`](https://github.com/PyAV-Org/PyAV) >= `9.2.0`
 
-  > Binding torchvision library to ffmpeg to read streams.
+  > Binding torchvision to ffmpeg to read streams.
 
 - [`gdown`](https://github.com/wkentaro/gdown) >= `4.5.1`
 
