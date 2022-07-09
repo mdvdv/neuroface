@@ -17,7 +17,7 @@ NeuroFace is a Python framework containing tools for detection, human face recog
 </ul>
 
 <a name='001'></a>
-<h2>Environment</h2>
+<h2>1. Environment</h2>
 
 - [`torch`](https://github.com/pytorch/pytorch) >= `1.12.0`: PyTorch models implementation and deployment.
 
@@ -46,7 +46,7 @@ pip install -r requirements.txt
 ```
 
 <a name='002'></a>
-<h2>Installation</h2>
+<h2>2. Installation</h2>
 
 ```python
 git clone https://github.com/mdvdv/neuroface.git
