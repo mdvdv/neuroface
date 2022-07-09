@@ -19,9 +19,7 @@ NeuroFace is a Python framework containing tools for detection, human face recog
 <a name='001'></a>
 <h2>Environment</h2>
 
-- [`torch`](https://github.com/pytorch/pytorch) >= `1.12.0`
-
-  > PyTorch models implementation and deployment.
+- [`torch`](https://github.com/pytorch/pytorch) >= `1.12.0` > PyTorch models implementation and deployment.
 
 - [`torchvision`](https://github.com/pytorch/vision) >= `0.13.0`
 
@@ -47,12 +45,12 @@ NeuroFace is a Python framework containing tools for detection, human face recog
 
   > Downloading large files from Google Drive.
 
-System requirements:
+<h3>System requirements:</h3>
 - [`CUDA`](https://developer.nvidia.com/cuda-downloads) >= `11.3`
 
   > GPU compute access.
 
-Quick installation:
+<h3>Quick installation:</h3>
 
 ```python
 pip install -r requirements.txt
