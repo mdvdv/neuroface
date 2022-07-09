@@ -19,13 +19,9 @@ NeuroFace is a Python framework containing tools for detection, human face recog
 <a name='001'></a>
 <h2>Environment</h2>
 
-- [`torch`](https://github.com/pytorch/pytorch) >= `1.12.0`
+- [`torch`](https://github.com/pytorch/pytorch) >= `1.12.0` PyTorch models implementation and deployment.
 
-  > PyTorch models implementation and deployment.
-
-- [`torchvision`](https://github.com/pytorch/vision) >= `0.13.0`
-
-  > Reading and preprocessing frames as torch tensors.
+- [`torchvision`](https://github.com/pytorch/vision) >= `0.13.0` Reading and preprocessing frames as torch tensors.
 
 - [`mediapipe`](https://github.com/google/mediapipe) >= `0.8.10.1`
 
