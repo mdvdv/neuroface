@@ -2,8 +2,6 @@
 
 ![Typing SVG](https://readme-typing-svg.herokuapp.com?size=100&color=F7F7F7&center=true&vCenter=true&width=1875&height=100&lines=NeuroFace)
 
-![Downloads](https://pepy.tech/badge/neuroface)]
-
 ---
 
 NeuroFace is a Python framework containing tools for detection, human face recognition, analysis of human facial expressions and gestures on video stream.
@@ -13,9 +11,9 @@ NeuroFace is a Python framework containing tools for detection, human face recog
 
 <ul>
     <ol type='1'>
-    <li><a href='#001'>Environment</a></li>
-    <li><a href='#002'>Installation</a></li>
-    <li><a href='#003'>References</a></li>
+        <li><a href='#001'>Environment</a></li>
+        <li><a href='#002'>Installation</a></li>
+        <li><a href='#003'>References</a></li>
     </ol>
 </ul>
 
@@ -60,5 +58,7 @@ git clone https://github.com/mdvdv/neuroface.git
 
 <ul>
     <ol type='1'>
+        <li>Face Recognition Using Pytorch: https://github.com/timesler/facenet-pytorch.</a></li>
+        <li>Distract Your Attention: Multi-head Cross Attention Network for Facial Expression Recognition: https://github.com/yaoing/dan.</a></li>
     </ol>
 </ul>
