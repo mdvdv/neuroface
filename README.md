@@ -59,6 +59,7 @@ git clone https://github.com/mdvdv/neuroface.git
 <ul>
     <ol type='1'>
         <li>Face Recognition Using Pytorch: https://github.com/timesler/facenet-pytorch.</a></li>
+        <li>Cross-platform, Customizable ML Solutions for Live and Streaming Media.: https://github.com/google/mediapipe.</a></li>
         <li>Distract Your Attention: Multi-head Cross Attention Network for Facial Expression Recognition: https://github.com/yaoing/dan.</a></li>
     </ol>
 </ul>
