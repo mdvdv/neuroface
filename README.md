@@ -4,7 +4,7 @@
 
 ---
 
-NeuroFace is a Python framework containing tools for detection, human face recognition, analysis of human facial expressions and gestures on video stream.
+NeuroFace is a Python framework containing tools for detection, human face recognition, analysis of human facial expressions and gestures on video.
 
 <a name='000'></a>
 <h2>Table of Contents</h2>
