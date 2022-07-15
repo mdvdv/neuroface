@@ -5,7 +5,7 @@ import os
 import gdown
 import numpy as np
 import PIL.Image
-from typing import Any, Union
+from typing import Any, Union, Tuple, List
 
 from .detect import detect_face, extract_face
 
@@ -48,7 +48,7 @@ class PNet(nn.Module):
             state_dict = torch.load(cached_file)
             self.load_state_dict(state_dict, strict=True)
     
-    def forward(self, x: Tensor) -> tuple[Tensor, Tensor]:
+    def forward(self, x: Tensor) -> Tuple[Tensor, Tensor]:
         x = self.conv1(x)
         x = self.prelu1(x)
         x = self.pool1(x)
@@ -104,7 +104,7 @@ class RNet(nn.Module):
             state_dict = torch.load(cached_file)
             self.load_state_dict(state_dict, strict=True)
     
-    def forward(self, x: Tensor) -> tuple[Tensor, Tensor]:
+    def forward(self, x: Tensor) -> Tuple[Tensor, Tensor]:
         x = self.conv1(x)
         x = self.prelu1(x)
         x = self.pool1(x)
@@ -168,7 +168,7 @@ class ONet(nn.Module):
             state_dict = torch.load(cached_file)
             self.load_state_dict(state_dict, strict=True)
     
-    def forward(self, x: Tensor) -> tuple[Tensor, Tensor, Tensor]:
+    def forward(self, x: Tensor) -> Tuple[Tensor, Tensor, Tensor]:
         x = self.conv1(x)
         x = self.prelu1(x)
         x = self.pool1(x)
@@ -207,13 +207,13 @@ class MTCNN(nn.Module):
         image_size: int = 160,
         margin: int = 0,
         min_face_size: int = 20,
-        thresholds: list[float, float, float] = [0.6, 0.7, 0.7],
+        thresholds: List[float] = [0.6, 0.7, 0.7],
         factor: float = 0.709,
         post_process: bool = True,
         select_largest: bool = True,
-        selection_method: str | None = None,
+        selection_method: "str | None" = None,
         keep_all: bool = False,
-        device: torch.device | None = None
+        device: "torch.device | None" = None
     ) -> None:
         """
         Args:
@@ -223,7 +223,7 @@ class MTCNN(nn.Module):
                 repo, which applies the margin to the original image before resizing, making the margin
                 dependent on the original image size (this is a bug in davidsandberg/facenet).
             min_face_size (int, optional): Minimum face size to search for.
-            thresholds (list[float, float, float], optional): MTCNN face detection thresholds.
+            thresholds (List[float], optional): MTCNN face detection thresholds.
             factor (float, optional): Factor used to create a scaling pyramid of face sizes.
             post_process (bool, optional): Whether or not to post process images tensors before returning.
             select_largest (bool, optional: If True, if multiple faces are detected, the largest is returned.
@@ -268,10 +268,10 @@ class MTCNN(nn.Module):
     
     def forward(
         self,
-        image: PIL.Image | np.ndarray | Tensor | list[Any],
-        save_path: str | None = None,
+        image: "PIL.Image | np.ndarray | Tensor | List[Any]",
+        save_path: "str | None" = None,
         return_prob: bool = False
-    ) -> Union[Tensor, tuple(Tensor, float)]:
+    ) -> Union[Tensor, Tuple[Tensor, float]]:
         """ Run MTCNN face detection on a PIL image, numpy or torch tensors. This method performs both
         detection and extraction of faces, returning tensors representing detected faces rather
         than the bounding boxes. To access bounding boxes, see the MTCNN.detect() method below.
@@ -323,9 +323,9 @@ class MTCNN(nn.Module):
     
     def detect(
         self,
-        image: PIL.Image | np.ndarray | Tensor | list[Any],
+        image: "PIL.Image | np.ndarray | Tensor | List[Any]",
         landmarks: bool = False
-    ) -> tuple(np.ndarray, list):
+    ) -> Tuple[np.ndarray, List]:
         """ Detect all faces in PIL image and return bounding boxes and optional facial landmarks.
         This method is used by the forward method and is also useful for face detection tasks
         that require lower-level handling of bounding boxes and facial landmarks (e.g., face
@@ -419,11 +419,11 @@ class MTCNN(nn.Module):
         all_boxes: np.ndarray,
         all_probs: np.ndarray,
         all_points: np.ndarray,
-        imgs: PIL.Image | np.ndarray | torch.Tensor | list[Any],
+        imgs: "PIL.Image | np.ndarray | torch.Tensor | List[Any]",
         method: str = 'probability',
         threshold: float = 0.9,
         center_weight: float = 2.0
-    ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    ) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
         """ Selects a single box from multiple for a given image using one of multiple heuristics.
         
         Args:
@@ -516,10 +516,10 @@ class MTCNN(nn.Module):
     
     def extract(
         self,
-        image: np.ndarray | torch.Tensor | list[Any] | tuple[Any],
-        batch_boxes: | None,
-        save_path: str | None
-    ) -> list[Tensor]:
+        image: "np.ndarray | torch.Tensor | List[Any] | Tuple[Any]",
+        batch_boxes: "np.ndarray | None",
+        save_path: "str | None"
+    ) -> List[Tensor]:
         # Determine if a batch or single image was passed.
         batch_mode = True
         
