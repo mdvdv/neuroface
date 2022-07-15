@@ -4,6 +4,7 @@ import torch.nn.functional as F
 
 import os
 import gdown
+from typing import Tuple
 
 
 class ConvBN(nn.Sequential):
@@ -76,7 +77,7 @@ class MobileNetV1(nn.Module):
         
         self.out_channels = [64, 128, 256]
     
-    def forward(self, x: Tensor) -> tuple[Tensor, Tensor, Tensor]:
+    def forward(self, x: Tensor) -> Tuple[Tensor, Tensor, Tensor]:
         x1 = self.stage1(x)
         x2 = self.stage2(x1)
         x3 = self.stage3(x2)
@@ -122,7 +123,7 @@ class FPN(nn.Module):
         self.merge1 = ConvBNReLU(out_channel, out_channel, 3, 1, 1, leaky)
         self.merge2 = ConvBNReLU(out_channel, out_channel, 3, 1, 1, leaky)
     
-    def forward(self, feats: Tensor) -> tuple[Tensor, Tensor, Tensor]:
+    def forward(self, feats: Tensor) -> Tuple[Tensor, Tensor, Tensor]:
         output1 = self.output1(feats[0])
         output2 = self.output2(feats[1])
         output3 = self.output3(feats[2])
@@ -193,7 +194,7 @@ class RetinaFace(nn.Module):
         >>> retinanet = RetinaFace(pretrained=True, device=device)
     """
     
-    def __init__(self, pretrained: bool = True, device: torch.device | None = None) -> None:
+    def __init__(self, pretrained: bool = True, device: "torch.device | None" = None) -> None:
         super().__init__()
         """
         Args:
@@ -244,7 +245,7 @@ class RetinaFace(nn.Module):
             self.device = device
             self.to(device)
     
-    def forward(self, x: Tensor) -> tuple[Tensor, Tensor, Tensor]:
+    def forward(self, x: Tensor) -> Tuple[Tensor, Tensor, Tensor]:
         feats = self.body(x)
         feats = self.fpn(feats)
         feat1 = self.ssh1(feats[0])
