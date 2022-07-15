@@ -36,9 +36,7 @@ NeuroFace is a Python framework containing tools for detection, human face recog
 
 <h4>System requirements:</h4>
 
-- [`CUDA`](https://developer.nvidia.com/cuda-downloads) >= `11.3`
-
-  > GPU compute access.
+- [`CUDA`](https://developer.nvidia.com/cuda-downloads) >= `11.3`: GPU compute access.
 
 <h4>Quick installation:</h4>
 
