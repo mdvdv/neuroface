@@ -7,7 +7,10 @@ import gdown
 
 
 class ConvBN(nn.Sequential):
-    def __init__(self, c1, c2, s):
+    """ 3x3 Convolution with Batch Normalization.
+    """
+    
+    def __init__(self, c1: int, c2: int, s: int) -> None:
         super().__init__(
             nn.Conv2d(c1, c2, 3, s, 1, bias=False),
             nn.BatchNorm2d(c2)
@@ -15,8 +18,10 @@ class ConvBN(nn.Sequential):
 
 
 class ConvBNReLU(nn.Sequential):
+    """ 3x3 Convolution with Batch Normalization and Leaky ReLU Activation.
+    """
     
-    def __init__(self, c1, c2, k=3, s=1, p=1, leaky=0.):
+    def __init__(self, c1: int, c2: int, k: int = 3, s: int = 1, p: int = 1, leaky: float = 0.) -> None:
         super().__init__(
             nn.Conv2d(c1, c2, k, s, p, bias=False),
             nn.BatchNorm2d(c2),
@@ -25,8 +30,10 @@ class ConvBNReLU(nn.Sequential):
 
 
 class DWConv(nn.Sequential):
+    """ Depthwise Convolution.
+    """
     
-    def __init__(self, c1, c2, s, leaky=0.1):
+    def __init__(self, c1: int, c2: int, s: int, leaky: float = 0.1) -> None:
         super().__init__(
             nn.Conv2d(c1, c1, 3, s, 1, groups=c1, bias=False),
             nn.BatchNorm2d(c1),
@@ -38,6 +45,8 @@ class DWConv(nn.Sequential):
 
 
 class MobileNetV1(nn.Module):
+    """ MobileNet V1 implementation.
+    """
     
     def __init__(self) -> None:
         super().__init__()
@@ -67,7 +76,7 @@ class MobileNetV1(nn.Module):
         
         self.out_channels = [64, 128, 256]
     
-    def forward(self, x: Tensor) -> Tensor:
+    def forward(self, x: Tensor) -> tuple[Tensor, Tensor, Tensor]:
         x1 = self.stage1(x)
         x2 = self.stage2(x1)
         x3 = self.stage3(x2)
@@ -77,7 +86,7 @@ class MobileNetV1(nn.Module):
 
 class SSH(nn.Module):
     
-    def __init__(self, c1, c2) -> None:
+    def __init__(self, c1: int, c2: int) -> None:
         super().__init__()
         
         leaky = 0.1 if c2 <= 64 else 0.
@@ -102,7 +111,7 @@ class SSH(nn.Module):
 
 class FPN(nn.Module):
     
-    def __init__(self, in_channels, out_channel) -> None:
+    def __init__(self, in_channels: int, out_channel: int) -> None:
         super().__init__()
         
         leaky = 0.1 if out_channel <= 64 else 0.
@@ -113,7 +122,7 @@ class FPN(nn.Module):
         self.merge1 = ConvBNReLU(out_channel, out_channel, 3, 1, 1, leaky)
         self.merge2 = ConvBNReLU(out_channel, out_channel, 3, 1, 1, leaky)
     
-    def forward(self, feats: Tensor) -> Tensor:
+    def forward(self, feats: Tensor) -> tuple[Tensor, Tensor, Tensor]:
         output1 = self.output1(feats[0])
         output2 = self.output2(feats[1])
         output3 = self.output3(feats[2])
@@ -131,7 +140,7 @@ class FPN(nn.Module):
 
 class ClassHead(nn.Module):
     
-    def __init__(self, ch=512, num_anchors=3) -> None:
+    def __init__(self, ch: int = 512, num_anchors: int = 3) -> None:
         super().__init__()
         
         self.conv1x1 = nn.Conv2d(ch, num_anchors*2, 1)
@@ -146,7 +155,7 @@ class ClassHead(nn.Module):
 
 class BboxHead(nn.Module):
     
-    def __init__(self, ch=512, num_anchors=3) -> None:
+    def __init__(self, ch: int = 512, num_anchors: int = 3) -> None:
         super().__init__()
         
         self.conv1x1 = nn.Conv2d(ch, num_anchors*4, 1)
@@ -161,7 +170,7 @@ class BboxHead(nn.Module):
 
 class LandmarkHead(nn.Module):
     
-    def __init__(self, ch=512, num_anchors=3) -> None:
+    def __init__(self, ch: int = 512, num_anchors: int = 3) -> None:
         super().__init__()
         
         self.conv1x1 = nn.Conv2d(ch, num_anchors*10, 1)
@@ -175,9 +184,22 @@ class LandmarkHead(nn.Module):
 
 
 class RetinaFace(nn.Module):
+    """ RetinaFace implementation.
     
-    def __init__(self, pretrained=None, device=None) -> None:
+    Example:
+        >>> import torch
+        >>> from neuroface import RetinaFace
+        >>> device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+        >>> retinanet = RetinaFace(pretrained=True, device=device)
+    """
+    
+    def __init__(self, pretrained: bool = True, device: torch.device | None = None) -> None:
         super().__init__()
+        """
+        Args:
+            pretrained (bool, optional): Whether or not to load saved pretrained weights.
+            device (torch.device | None, optional): Object representing device type.
+        """
         
         channel = 64
         
@@ -189,15 +211,18 @@ class RetinaFace(nn.Module):
         
         self.ClassHead = nn.ModuleList([
             ClassHead(channel, num_anchors=2)
-        for _ in range(3)])
+            for _ in range(3)
+        ])
         
         self.BboxHead = nn.ModuleList([
             BboxHead(channel, num_anchors=2)
-        for _ in range(3)])
+            for _ in range(3)
+        ])
         
         self.LandmarkHead = nn.ModuleList([
             LandmarkHead(channel, num_anchors=2)
-        for _ in range(3)])
+            for _ in range(3)
+        ])
         
         if pretrained:
             path = 'https://drive.google.com/uc?export=view&id=1-AxXlAFoE5KHBy3ugoi3oi9r-X1hYK_B'
@@ -219,7 +244,7 @@ class RetinaFace(nn.Module):
             self.device = device
             self.to(device)
     
-    def forward(self, x: Tensor) -> Tensor:
+    def forward(self, x: Tensor) -> tuple[Tensor, Tensor, Tensor]:
         feats = self.body(x)
         feats = self.fpn(feats)
         feat1 = self.ssh1(feats[0])
@@ -243,7 +268,10 @@ class RetinaFace(nn.Module):
         return F.softmax(classifications, dim=-1), bbox_regress, landmark_regress
 
 
-def get_torch_home():
+def get_torch_home() -> str:
+    """ Get Torch Hub cache directory used for storing downloaded models and weights.
+    """
+    
     torch_home = os.path.expanduser(
         os.getenv(
             'TORCH_HOME',
