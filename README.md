@@ -108,7 +108,7 @@ git clone https://github.com/mdvdv/neuroface.git
   </thead>
   <tbody>
     <tr>
-      <td rowspan='2'><b><a href='hthttps://github.com/mdvdv/neuroface/blob/main/neuroface/landmarks/face_mesh.py'>MediaPipe Face Mesh</a></b></td>
+      <td><b><a href='hthttps://github.com/mdvdv/neuroface/blob/main/neuroface/landmarks/face_mesh.py'>MediaPipe Face Mesh</a></b></td>
       <td><a href='https://arxiv.org/pdf/1907.06724'>30K images</a></td>
       <td>BlazeFace</td>
       <td>0.396</td>
