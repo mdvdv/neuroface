@@ -69,18 +69,18 @@ git clone https://github.com/mdvdv/neuroface.git
   </thead>
   <tbody>
     <tr>
-      <td><b>Inception-ResNet V1</b></td>
-      <td>CASIA-WebFace</td>
+      <td><b><a href='https://github.com/mdvdv/neuroface/blob/main/neuroface/face/comparison/inception_resnet_v1.py'>Inception-ResNet V1</a></b></td>
+      <td><a href='https://arxiv.org/pdf/1411.7923'>CASIA-WebFace</a></td>
       <td>Inception</td>
       <td>0.9905</td>
-      <td><a href='https://drive.google.com/uc?export=view&id=1rgLytxUaOUrtjpxCl-mQFGYdUfSWgQCo'>20180408-102900-casia-webface.pt</a></td>
+      <td><a href='https://drive.google.com/uc?export=view&id=1rgLytxUaOUrtjpxCl-mQFGYdUfSWgQCo'>20180408-102900</a> (110.5 MB)</td>
     </tr>
     <tr>
-      <td><b>Inception-ResNet V1</b></td>
-      <td>VGGFace2</td>
+      <td><b><a href='https://github.com/mdvdv/neuroface/blob/main/neuroface/face/comparison/inception_resnet_v1.py'>Inception-ResNet V1</a></b></td>
+      <td><a href='http://www.robots.ox.ac.uk/~vgg/publications/2018/Cao18/cao18.pdf'>VGGFace2</a></td>
       <td>Inception</td>
       <td>0.9965</td>
-      <td><a href='https://drive.google.com/uc?export=view&id=1P4OqfwcUXXuycmow_Fb8EXqQk5E7-H5E'>20180402-114759-vggface2.pt</a></td>
+      <td><a href='https://drive.google.com/uc?export=view&id=1P4OqfwcUXXuycmow_Fb8EXqQk5E7-H5E'>20180402-114759</a> (106.7 MB)</td>
     </tr>
   </tbody>
 </table>
