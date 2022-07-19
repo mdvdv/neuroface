@@ -63,7 +63,7 @@ git clone https://github.com/mdvdv/neuroface.git
       <th>Model Name</th>
       <th>Training Dataset</th>
       <th>Backbone</th>
-      <th>LWF Metric</th>
+      <th>AP Metric</th>
       <th>Weights</th>
     </tr>
   </thead>
