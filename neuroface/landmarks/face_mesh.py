@@ -48,7 +48,7 @@ class FaceMesh(object):
         """
         Args:
             image (np.ndarray): BGR image represented as numpy ndarray.
-            normalize (bool, optional)): Apply minimax normalization to facial landmarks.
+            normalize (bool, optional): Apply minimax normalization to facial landmarks.
         """
         
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
