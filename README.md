@@ -75,6 +75,7 @@ git clone https://github.com/mdvdv/neuroface.git
       <th>Backbone</th>
       <th><abbr title='Average Precision'>AP</abbr> Metric</th>
       <th>Weights</th>
+      <td>Paper</td>
     </tr>
   </thead>
   <tbody>
@@ -90,6 +91,7 @@ git clone https://github.com/mdvdv/neuroface.git
       <td>Inception</td>
       <td>0.9965</td>
       <td><a href='https://drive.google.com/uc?export=view&id=1P4OqfwcUXXuycmow_Fb8EXqQk5E7-H5E'>20180402-114759</a> (106.7 MB)</td>
+      <td><a href='https://arxiv.org/pdf/1503.03832.pdf'>PDF</a></td>
     </tr>
   </tbody>
 </table>
