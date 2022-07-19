@@ -78,7 +78,7 @@ git clone https://github.com/mdvdv/neuroface.git
   <tbody>
     <tr>
       <td rowspan='3'><b><a href='https://github.com/mdvdv/neuroface/blob/main/neuroface/face/detection/mtcnn.py'>MTCNN</a></b></td>
-      <td rowspan='3'><a href='https://arxiv.org/pdf/1511.06523v1.pdf'>WiderFace</a></td>
+      <td rowspan='4'><a href='https://arxiv.org/pdf/1511.06523v1.pdf'>WiderFace</a></td>
       <td>P-Net</td>
       <td>0.946</td>
       <td><a href='https://drive.google.com/uc?export=view&id=11il5MJc7VRdpiU_HdstX9Gczdxdb_0M8'>pnet</a> (28 KB)</td>
@@ -93,6 +93,13 @@ git clone https://github.com/mdvdv/neuroface.git
       <td>O-Net</td>
       <td>0.954</td>
       <td><a href='https://drive.google.com/uc?export=view&id=1NDE8q3O741FW960GDxBnuSkPJS3mugfh'>onet</a> (1.5 MB)</td>
+    </tr>
+    <tr>
+      <td><b><a href='https://github.com/mdvdv/neuroface/blob/main/neuroface/face/detection/retinaface.py'>RetinaFace</a></b></td>
+      <td>MobileNetV1</td>
+      <td>0.914</td>
+      <td><a href='https://drive.google.com/uc?export=view&id=1-AxXlAFoE5KHBy3ugoi3oi9r-X1hYK_B'>mobilenet</a> (1.7 MB)</td>
+      <td><a href='https://arxiv.org/pdf/1905.00641'>PDF</a></td>
     </tr>
   </tbody>
 </table>
