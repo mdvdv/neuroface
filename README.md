@@ -103,6 +103,7 @@ git clone https://github.com/mdvdv/neuroface.git
     </tr>
     <tr>
       <td><b><a href='https://github.com/mdvdv/neuroface/blob/main/neuroface/face/detection/mediapipe_face.py'>MediaPipe Face Detection</a></b></td>
+      <td>-</td>
       <td>BlazeFace</td>
       <td>0.9861</td>
       <td>-</td>
