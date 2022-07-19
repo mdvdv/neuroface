@@ -94,7 +94,7 @@ git clone https://github.com/mdvdv/neuroface.git
   </tbody>
 </table>
 
-* - Average Precision
+ * - Average Precision
 
 <a name='033'></a>
 <h3>3.3 Facial Landmark Detection</h3>
@@ -118,7 +118,7 @@ git clone https://github.com/mdvdv/neuroface.git
   </tbody>
 </table>
 
-* - Mean Absolute Distance
+ * - Mean Absolute Distance
 
 <a name='034'></a>
 <h3>3.4 Pose Landmark Detection</h3>
