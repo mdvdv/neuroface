@@ -14,6 +14,12 @@ NeuroFace is a Python framework containing tools for detection, human face recog
         <li><a href='#001'>Environment</a></li>
         <li><a href='#002'>Installation</a></li>
         <li><a href='#003'>Supported Models</a></li>
+        <ol type='1'>
+            <li><a href='#031'>Face Detection</a></li>
+            <li><a href='#032'>Face Embedding</a></li>
+            <li><a href='#033'>Facial Landmark Detection</a></li>
+            <li><a href='#034'>Pose Landmark Detection</a></li>
+        </ol>
         <li><a href='#004'>References</a></li>
     </ol>
 </ul>
@@ -55,7 +61,11 @@ git clone https://github.com/mdvdv/neuroface.git
 <a name='003'></a>
 <h2>3. Supported Models</h2>
 
-<h3>Face Embedding</h3>
+<a name='031'></a>
+<h3>3.1 Face Detection</h3>
+
+<a name='032'></a>
+<h3>3.2 Face Embedding</h3>
 
 <table>
   <thead>
@@ -84,7 +94,30 @@ git clone https://github.com/mdvdv/neuroface.git
   </tbody>
 </table>
 
-<h3>Facial Landmark Detection</h3>
+<a name='033'></a>
+<h3>3.3 Facial Landmark Detection</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Model Name</th>
+      <th>Training Dataset</th>
+      <th>Backbone</th>
+      <th>MAD Metric</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan='2'><b><a href='hthttps://github.com/mdvdv/neuroface/blob/main/neuroface/landmarks/face_mesh.py'>MediaPipe Face Mesh</a></b></td>
+      <td><a href='https://arxiv.org/pdf/1907.06724'>30K images</a></td>
+      <td>BlazeFace</td>
+      <td>0.396</td>
+    </tr>
+  </tbody>
+</table>
+
+<a name='034'></a>
+<h3>3.4 Pose Landmark Detection</h3>
 
 <a name='004'></a>
 <h2>4. References</h2>
