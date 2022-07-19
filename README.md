@@ -73,7 +73,7 @@ git clone https://github.com/mdvdv/neuroface.git
       <th>Model Name</th>
       <th>Training Dataset</th>
       <th>Backbone</th>
-      <th>AP[^1] Metric</th>
+      <th><abbr title='Average Precision'>AP</abbr> Metric</th>
       <th>Weights</th>
     </tr>
   </thead>
@@ -94,8 +94,6 @@ git clone https://github.com/mdvdv/neuroface.git
   </tbody>
 </table>
 
-[^1]: Average Precision
-
 <a name='033'></a>
 <h3>3.3 Facial Landmark Detection</h3>
 
@@ -104,7 +102,7 @@ git clone https://github.com/mdvdv/neuroface.git
     <tr>
       <th>Model Name</th>
       <th>Backbone</th>
-      <th>MAD[^1] Metric</th>
+      <th><abbr title='Mean Absolute Distance'>MAD</abbr> Metric</th>
       <th>Paper</th>
     </tr>
   </thead>
@@ -117,8 +115,6 @@ git clone https://github.com/mdvdv/neuroface.git
     </tr>
   </tbody>
 </table>
-
-[^1]: Mean Absolute Distance
 
 <a name='034'></a>
 <h3>3.4 Pose Landmark Detection</h3>
