@@ -19,6 +19,7 @@ NeuroFace is a Python framework containing tools for detection, human face recog
             <li><a href='#032'>Face Embedding</a></li>
             <li><a href='#033'>Facial Landmark Detection</a></li>
             <li><a href='#034'>Pose Landmark Detection</a></li>
+            <li><a href='#035'>Facial Expression Recognition</a></li>
         </ol>
         <li><a href='#004'>References</a></li>
     </ol>
@@ -168,6 +169,32 @@ git clone https://github.com/mdvdv/neuroface.git
 
 <a name='034'></a>
 <h3>3.4 Pose Landmark Detection</h3>
+
+<a name='035'></a>
+<h3>3.5 Facial Expression Recognition</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Model Name</th>
+      <th>Training Dataset</th>
+      <th>Backbone</th>
+      <th><abbr title='Average Precision'>AP</abbr> Metric</th>
+      <th>Weights</th>
+      <td>Paper</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b><a href='https://github.com/mdvdv/neuroface/blob/main/neuroface/emotions/attention_resnet.py'>DAN</a></b></td>
+      <td><a href='https://arxiv.org/pdf/1708.03985v4.pdf'>AffectNet-8</a></td>
+      <td>ResNet</td>
+      <td>0.6209</td>
+      <td><a href='https://drive.google.com/uc?export=view&id=17lzsrHyuSGd2cZuNHdAAPCw6JsrjgFIn'>affecnet</a> (226 MB)</td>
+      <td><a href='https://arxiv.org/pdf/2109.07270.pdf'>PDF</a></td>
+    </tr>
+  </tbody>
+</table>
 
 <a name='004'></a>
 <h2>4. References</h2>
