@@ -64,6 +64,39 @@ git clone https://github.com/mdvdv/neuroface.git
 <a name='031'></a>
 <h3>3.1 Face Detection</h3>
 
+<table>
+  <thead>
+    <tr>
+      <th>Model Name</th>
+      <th>Training Dataset</th>
+      <th>Backbone</th>
+      <th><abbr title='Average Precision'>AP</abbr> Metric</th>
+      <th>Weights</th>
+      <td>Paper</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan='3'><b><a href='https://github.com/mdvdv/neuroface/blob/main/neuroface/face/detection/mtcnn.py'>MTCNN</a></b></td>
+      <td rowspan='3'><a href='https://arxiv.org/pdf/1511.06523v1.pdf'>WiderFace</a></td>
+      <td>P-Net</td>
+      <td>0.946</td>
+      <td><a href='https://drive.google.com/uc?export=view&id=11il5MJc7VRdpiU_HdstX9Gczdxdb_0M8'>pnet</a> (28 KB)</td>
+      <td rowspan='3'><a href='https://kpzhang93.github.io/MTCNN_face_detection_alignment/paper/spl.pdf'>PDF</a></td>
+    </tr>
+    <tr>
+      <td>R-Net</td>
+      <td>0.954</td>
+      <td><a href='https://drive.google.com/uc?export=view&id=1ykKHaW6or-bWSgCGXJYV3F2B9vU6U3aM'>rnet</a> (394 KB)</td>
+    </tr>
+    <tr>
+      <td>O-Net</td>
+      <td>0.954</td>
+      <td><a href='https://drive.google.com/uc?export=view&id=1NDE8q3O741FW960GDxBnuSkPJS3mugfh'>onet</a> (1.5 MB)</td>
+    </tr>
+  </tbody>
+</table>
+
 <a name='032'></a>
 <h3>3.2 Face Embedding</h3>
 
