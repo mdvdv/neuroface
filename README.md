@@ -101,17 +101,17 @@ git clone https://github.com/mdvdv/neuroface.git
   <thead>
     <tr>
       <th>Model Name</th>
-      <th>Training Dataset</th>
       <th>Backbone</th>
       <th>MAD Metric</th>
+      <th>Paper</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><b><a href='hthttps://github.com/mdvdv/neuroface/blob/main/neuroface/landmarks/face_mesh.py'>MediaPipe Face Mesh</a></b></td>
-      <td><a href='https://arxiv.org/pdf/1907.06724'>30K images</a></td>
+      <td><b><a href='https://github.com/mdvdv/neuroface/blob/main/neuroface/landmarks/face_mesh.py'>MediaPipe Face Mesh</a></b></td>
       <td>BlazeFace</td>
       <td>0.396</td>
+      <td><a href='https://arxiv.org/pdf/1907.06724'>PDF</a></td>
     </tr>
   </tbody>
 </table>
