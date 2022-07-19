@@ -13,7 +13,8 @@ NeuroFace is a Python framework containing tools for detection, human face recog
     <ol type='1'>
         <li><a href='#001'>Environment</a></li>
         <li><a href='#002'>Installation</a></li>
-        <li><a href='#003'>References</a></li>
+        <li><a href='#003'>Supported Models</a></li>
+        <li><a href='#004'>References</a></li>
     </ol>
 </ul>
 
@@ -52,7 +53,42 @@ git clone https://github.com/mdvdv/neuroface.git
 ```
 
 <a name='003'></a>
-<h2>3. References</h2>
+<h2>3. Supported Models</h2>
+
+<h3>Face Embedding</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Model Name</th>
+      <th>Training Dataset</th>
+      <th>Backbone</th>
+      <th>LWF Metric</th>
+      <th>Weights</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Inception-ResNet V1</b></td>
+      <td>CASIA-WebFace</td>
+      <td>Inception</td>
+      <td>0.9905</td>
+      <td><a href='https://drive.google.com/uc?export=view&id=1rgLytxUaOUrtjpxCl-mQFGYdUfSWgQCo'>20180408-102900-casia-webface.pt</a></td>
+    </tr>
+    <tr>
+      <td><b>Inception-ResNet V1</b></td>
+      <td>VGGFace2</td>
+      <td>Inception</td>
+      <td>0.9965</td>
+      <td><a href='https://drive.google.com/uc?export=view&id=1P4OqfwcUXXuycmow_Fb8EXqQk5E7-H5E'>20180402-114759-vggface2.pt</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Facial Landmark Detection</h3>
+
+<a name='004'></a>
+<h2>4. References</h2>
 
 <ul>
     <ol type='1'>
