@@ -96,10 +96,17 @@ git clone https://github.com/mdvdv/neuroface.git
     </tr>
     <tr>
       <td><b><a href='https://github.com/mdvdv/neuroface/blob/main/neuroface/face/detection/retinaface.py'>RetinaFace</a></b></td>
-      <td>MobileNetV1</td>
+      <td>MobileNet V1</td>
       <td>0.914</td>
       <td><a href='https://drive.google.com/uc?export=view&id=1-AxXlAFoE5KHBy3ugoi3oi9r-X1hYK_B'>mobilenet</a> (1.7 MB)</td>
       <td><a href='https://arxiv.org/pdf/1905.00641'>PDF</a></td>
+    </tr>
+    <tr>
+      <td><b><a href='https://github.com/mdvdv/neuroface/blob/main/neuroface/face/detection/mediapipe_face.py'>MediaPipe Face Detection</a></b></td>
+      <td>BlazeFace</td>
+      <td>0.9861</td>
+      <td>-</td>
+      <td><a href='https://arxiv.org/pdf/1907.05047'>PDF</a></td>
     </tr>
   </tbody>
 </table>
