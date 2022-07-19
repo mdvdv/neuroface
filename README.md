@@ -67,6 +67,8 @@ git clone https://github.com/mdvdv/neuroface.git
 <a name='032'></a>
 <h3>3.2 Face Embedding</h3>
 
+<abbr title='Average Precision'>AP</abbr>
+
 <table>
   <thead>
     <tr>
