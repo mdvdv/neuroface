@@ -69,7 +69,7 @@ git clone https://github.com/mdvdv/neuroface.git
   </thead>
   <tbody>
     <tr>
-      <td><b><a href='https://github.com/mdvdv/neuroface/blob/main/neuroface/face/comparison/inception_resnet_v1.py'>Inception-ResNet V1</a></b></td>
+      <td rowspan='2'><b><a href='https://github.com/mdvdv/neuroface/blob/main/neuroface/face/comparison/inception_resnet_v1.py'>Inception-ResNet V1</a></b></td>
       <td><a href='https://arxiv.org/pdf/1411.7923'>CASIA-WebFace</a></td>
       <td>Inception</td>
       <td>0.9905</td>
