@@ -85,13 +85,13 @@ git clone https://github.com/mdvdv/neuroface.git
       <td>Inception</td>
       <td>0.9905</td>
       <td><a href='https://drive.google.com/uc?export=view&id=1rgLytxUaOUrtjpxCl-mQFGYdUfSWgQCo'>20180408-102900</a> (110.5 MB)</td>
+      <td rowspan='2'><a href='https://arxiv.org/pdf/1503.03832.pdf'>PDF</a></td>
     </tr>
     <tr>
       <td><a href='http://www.robots.ox.ac.uk/~vgg/publications/2018/Cao18/cao18.pdf'>VGGFace2</a></td>
       <td>Inception</td>
       <td>0.9965</td>
       <td><a href='https://drive.google.com/uc?export=view&id=1P4OqfwcUXXuycmow_Fb8EXqQk5E7-H5E'>20180402-114759</a> (106.7 MB)</td>
-      <td><a href='https://arxiv.org/pdf/1503.03832.pdf'>PDF</a></td>
     </tr>
   </tbody>
 </table>
