@@ -14,7 +14,7 @@ NeuroFace is a Python framework containing tools for detection, human face recog
         <li><a href='#001'>Environment</a></li>
         <li><a href='#002'>Installation</a></li>
         <li><a href='#003'>Supported Models</a></li>
-        <ol type='1'>
+        <ol>
             <li><a href='#031'>Face Detection</a></li>
             <li><a href='#032'>Face Embedding</a></li>
             <li><a href='#033'>Facial Landmark Detection</a></li>
