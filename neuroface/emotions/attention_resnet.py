@@ -10,7 +10,7 @@ import gdown
 
 class AttentionResnet(nn.Module):
     
-    def __init__(self, num_class=8, num_head=4, pretrained=None, device=None):
+    def __init__(self, num_class=8, num_head=4, pretrained=None, device=None) -> None:
         super(AttentionResnet, self).__init__()
         
         resnet = models.resnet18(pretrained=False)
@@ -65,7 +65,7 @@ class AttentionResnet(nn.Module):
 
 class CrossAttentionHead(nn.Module):
     
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         
         self.sa = SpatialAttention()
@@ -95,7 +95,7 @@ class CrossAttentionHead(nn.Module):
 
 class SpatialAttention(nn.Module):
     
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         
         self.conv1x1 = nn.Sequential(
@@ -131,7 +131,7 @@ class SpatialAttention(nn.Module):
 
 class ChannelAttention(nn.Module):
     
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         
         self.gap = nn.AdaptiveAvgPool2d(1)
