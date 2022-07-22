@@ -38,7 +38,7 @@ image = cv2.imread(<image name>)
 image = Image.fromarray(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
 ```
 
-![test](https://user-images.githubusercontent.com/83948828/180439656-1a44f57c-e38d-49a7-bfcc-9578b0fb9b26.jpg)
+<img src="https://user-images.githubusercontent.com/83948828/180439656-1a44f57c-e38d-49a7-bfcc-9578b0fb9b26.jpg" width="224"/>
 
 ```python
 # Detect faces on image.
@@ -50,7 +50,7 @@ for box in boxes:
     draw.rectangle(box.tolist(), outline=(255, 0, 0), width=6)
 ```
 
-![draw](https://user-images.githubusercontent.com/83948828/180439690-87f57d46-d0a1-4954-8041-9b6a2b374a7f.jpg)
+<img src="https://user-images.githubusercontent.com/83948828/180439690-87f57d46-d0a1-4954-8041-9b6a2b374a7f.jpg" width="224"/>
 
 <a name='002'></a>
 <h2>2. Face Comparison</h2>
