@@ -187,6 +187,8 @@ class LandmarkHead(nn.Module):
 class RetinaFace(nn.Module):
     """ RetinaFace implementation.
     
+    RetinaFace performs face and facial landmarks detection on torch tensor images.
+    
     Example:
         >>> import torch
         >>> from neuroface import RetinaFace
