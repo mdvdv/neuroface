@@ -1,16 +1,39 @@
 import torch
 import torch.nn.functional as F
 import torch.nn.init as init
-from torch import nn
+from torch import nn, Tensor
 from torchvision import models
 
 import os
 import gdown
+from typing import Tuple
 
 
 class AttentionResnet(nn.Module):
+    """ Distract Your Attention Network implementation.
     
-    def __init__(self, num_class=8, num_head=4, pretrained=None, device=None) -> None:
+    Distract Your Attention Network performs facial expression recognition on torch tensor face images.
+    
+    Example:
+        >>> import torch
+        >>> from neuroface import AttentionResnet
+        >>> device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+        >>> resnet = AttentionResnet(pretrained=True, device=device).eval()
+    """
+    
+    def __init__(
+        self,
+        num_class: int = 8,
+        num_head: int = 4,
+        pretrained: bool = True,
+        device: "torch.device | None" = None
+    ) -> None:
+        """
+        Args:
+            pretrained (bool, optional): Whether or not to load saved pretrained weights.
+            device (torch.device | None, optional): Object representing device type.
+        """
+        
         super(AttentionResnet, self).__init__()
         
         resnet = models.resnet18(pretrained=False)
@@ -45,7 +68,7 @@ class AttentionResnet(nn.Module):
             self.device = device
             self.to(device)
     
-    def forward(self, x):
+    def forward(self, x: Tensor) -> Tuple[Tensor, Tensor, Tensor]:
         x = self.features(x)
         heads = []
         
@@ -72,7 +95,7 @@ class CrossAttentionHead(nn.Module):
         self.ca = ChannelAttention()
         self.init_weights()
     
-    def init_weights(self):
+    def init_weights(self) -> None:
         for m in self.modules():
             if isinstance(m, nn.Conv2d):
                 init.kaiming_normal_(m.weight, mode='fan_out')
@@ -86,7 +109,7 @@ class CrossAttentionHead(nn.Module):
                 if m.bias is not None:
                     init.constant_(m.bias, 0)
     
-    def forward(self, x):
+    def forward(self, x: Tensor) -> Tensor:
         sa = self.sa(x)
         ca = self.ca(sa)
         
@@ -120,7 +143,7 @@ class SpatialAttention(nn.Module):
         
         self.relu = nn.ReLU()
     
-    def forward(self, x):
+    def forward(self, x: Tensor) -> Tensor:
         y = self.conv1x1(x)
         y = self.relu(self.conv_3x3(y) + self.conv_1x3(y) + self.conv_3x1(y))
         y = y.sum(dim=1, keepdim=True)
@@ -144,7 +167,7 @@ class ChannelAttention(nn.Module):
             nn.Sigmoid()
         )
     
-    def forward(self, sa):
+    def forward(self, sa: Tensor) -> Tensor:
         sa = self.gap(sa)
         sa = sa.view(sa.size(0), -1)
         y = self.attention(sa)
@@ -153,7 +176,10 @@ class ChannelAttention(nn.Module):
         return out
 
 
-def get_torch_home():
+def get_torch_home() -> str:
+    """ Get Torch Hub cache directory used for storing downloaded models and weights.
+    """
+    
     torch_home = os.path.expanduser(
         os.getenv(
             'TORCH_HOME',
