@@ -1,23 +1,24 @@
 import torch
+from torch import Tensor
 
 
-def l2_norm(embedding):
+def l2_norm(embedding: Tensor) -> Tensor:
     """ L2 normalization technique implementation.
     
     Args:
-        embedding (torch.tensor): Face image embedding represented as torch tensor.
+        embedding (Tensor): Face image embedding represented as torch tensor.
     """
     
     return embedding / torch.sqrt(torch.sum(torch.multiply(embedding, embedding)))
 
 
-def distance(embedding1, embedding2, distance_metric=0):
+def distance(embedding1: Tensor, embedding2: Tensor, distance_metric: int = 0) -> Tensor:
     """ Calculation of distance between detected faces embeddings.
     
     Args:
-        embedding1 (torch.tensor): Original face image embedding represented as torch tensor.
-        embedding2 (torch.tensor): Face image embedding to compare represented as torch tensor.
-        distance_metric (int): Metric for evaluating the similarity of face embeddings - [0, 3].
+        embedding1 (Tensor): Original face image embedding represented as torch tensor.
+        embedding2 (Tensor): Face image embedding to compare represented as torch tensor.
+        distance_metric (int, optional): Metric for evaluating the similarity of face embeddings - [0, 3].
             0 to select Euclidian distance, 1 to select Euclidian distance with L2 normalization,
             2 to select cosine similarity, 3 to select Manhattan distance. Default 0.
     """
