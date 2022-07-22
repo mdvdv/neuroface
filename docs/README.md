@@ -84,6 +84,43 @@ embedding = resnet(face.permute(0, 3, 1, 2))
 print(distance(<select embedding>, <select embedding>, distance_metric=<select metric>))
 ```
 
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th><img src="https://user-images.githubusercontent.com/83948828/180442835-8992db0d-50ba-4a11-be2d-ad1af018d653.jpg" width="100" height="100"/></th>
+      <th><img src="https://user-images.githubusercontent.com/83948828/180442752-e4dea08d-afbd-496d-bf7b-d1f68ea902ab.jpg" width="100" height="100"/></th>
+      <th><img src="https://user-images.githubusercontent.com/83948828/180442888-33c0d4a0-4c9e-44b9-b9fa-46e3c219160d.jpg" width="100" height="100"/></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Euclidian Distance</td>
+      <td>0.0</td>
+      <td>1.9461</td>
+      <td>0.5072</td>
+    </tr>
+    <tr>
+      <td>Euclidian Distance with L2 Normalization</td>
+      <td>0.0</td>
+      <td>1.9461</td>
+      <td>0.5072</td>
+    </tr>
+    <tr>
+      <td>Cosine Similarity</td>
+      <td>0.0</td>
+      <td>0.4914</td>
+      <td>0.2318</td>
+    </tr>
+    <tr>
+      <td>Manhattan Distance</td>
+      <td>0.0</td>
+      <td>25.2447</td>
+      <td>12.7753</td>
+    </tr>
+  </tbody>
+</table>
+
 <a name='003'></a>
 <h2>3. Facial Landmark Detection</h2>
 
