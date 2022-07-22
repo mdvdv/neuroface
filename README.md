@@ -21,7 +21,8 @@ NeuroFace is a Python framework containing tools for detection, human face recog
             <li><a href='#034'>Pose Landmark Detection</a></li>
             <li><a href='#035'>Facial Expression Recognition</a></li>
         </ol>
-        <li><a href='#004'>References</a></li>
+        <li><a href='#004'>Usage</a></li>
+        <li><a href='#005'>References</a></li>
     </ol>
 </ul>
 
@@ -199,7 +200,12 @@ In progress.
 </table>
 
 <a name='004'></a>
-<h2>4. References</h2>
+<h2>4. Usage</h2>
+
+Code execution examples are presented in the [documentation](https://github.com/mdvdv/neuroface/blob/main/docs/README.md) section.
+
+<a name='005'></a>
+<h2>5. References</h2>
 
 <ul>
     <ol type='1'>
