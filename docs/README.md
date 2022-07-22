@@ -34,14 +34,14 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 mtcnn = MTCNN(keep_all=True, device=device).eval()
 
 # Upload image and change color space.
-image = cv2.imread(<image name>)
+image = cv2.imread(<select image>)
 image = Image.fromarray(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
 ```
 
 <img src="https://user-images.githubusercontent.com/83948828/180439656-1a44f57c-e38d-49a7-bfcc-9578b0fb9b26.jpg" width="224"/>
 
 ```python
-# Detect faces on image.
+# Detect face boxes on image.
 boxes, _ = mtcnn.detect(image)
 
 # Draw detected faces on image.
@@ -55,7 +55,34 @@ for box in boxes:
 <a name='002'></a>
 <h2>2. Face Comparison</h2>
 
-In progress.
+Building face embeddings using [InceptionResnetV1](https://arxiv.org/pdf/1503.03832.pdf) pretrained on [VGGFace2](https://www.robots.ox.ac.uk/~vgg/publications/2018/Cao18/cao18.pdf) dataset.
+
+```python
+import torch
+import torchvision.io as io
+
+from neuroface import MTCNN, InceptionResnetV1
+from neuroface.face.comparison.distance import distance
+
+# Initialize GPU device if available.
+device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+
+# Initialize MTCNN and InceptionResnetV1 on GPU device.
+mtcnn = MTCNN(keep_all=True, device=device).eval()
+resnet = InceptionResnetV1(pretrained='vggface2', device=device).eval()
+
+# Upload images and rearrange dimensions (C H W --> H W C).
+image = io.read_image(<select image>).to(device).permute(1, 2, 0)
+
+# Detect faces on images.
+face = mtcnn(image)
+
+# Rearrange dimensions (B H W C --> B C H W) and build face embeddings.
+embedding = resnet(face.permute(0, 3, 1, 2))
+
+# Calculate distance between embeddings.
+print(distance(<select embedding>, <select embedding>, distance_metric=<select metric>))
+```
 
 <a name='003'></a>
 <h2>3. Facial Landmark Detection</h2>
