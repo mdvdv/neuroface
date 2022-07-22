@@ -1,5 +1,5 @@
 import torch
-from torch import nn
+from torch import nn, Tensor
 from torch.nn import functional as F
 
 import os
@@ -8,7 +8,15 @@ import gdown
 
 class BasicConv2d(nn.Module):
     
-    def __init__(self, in_planes, out_planes, kernel_size, stride, padding=0):
+    def __init__(
+        self,
+        in_planes: int,
+        out_planes: int,
+        kernel_size: int,
+        stride: int,
+        padding: int = 0
+    ) -> None:
+        
         super().__init__()
         
         self.conv = nn.Conv2d(
@@ -26,7 +34,7 @@ class BasicConv2d(nn.Module):
         
         self.relu = nn.ReLU(inplace=False)
     
-    def forward(self, x):
+    def forward(self, x: Tensor) -> Tensor:
         x = self.conv(x)
         x = self.bn(x)
         x = self.relu(x)
@@ -36,7 +44,7 @@ class BasicConv2d(nn.Module):
 
 class Block35(nn.Module):
     
-    def __init__(self, scale=1.0):
+    def __init__(self, scale: float = 1.0) -> None:
         super().__init__()
         
         self.scale = scale
@@ -58,7 +66,7 @@ class Block35(nn.Module):
         
         self.relu = nn.ReLU(inplace=False)
     
-    def forward(self, x):
+    def forward(self, x: Tensor) -> Tensor:
         x0 = self.branch0(x)
         x1 = self.branch1(x)
         x2 = self.branch2(x)
@@ -72,7 +80,7 @@ class Block35(nn.Module):
 
 class Block17(nn.Module):
     
-    def __init__(self, scale=1.0):
+    def __init__(self, scale: float = 1.0) -> None:
         super().__init__()
         
         self.scale = scale
@@ -89,7 +97,7 @@ class Block17(nn.Module):
         
         self.relu = nn.ReLU(inplace=False)
     
-    def forward(self, x):
+    def forward(self, x: Tensor) -> Tensor:
         x0 = self.branch0(x)
         x1 = self.branch1(x)
         out = torch.cat((x0, x1), 1)
@@ -102,7 +110,7 @@ class Block17(nn.Module):
 
 class Block8(nn.Module):
     
-    def __init__(self, scale=1.0, noReLU=False):
+    def __init__(self, scale: float = 1.0, noReLU: bool = False) -> None:
         super().__init__()
         
         self.scale = scale
@@ -122,7 +130,7 @@ class Block8(nn.Module):
         if not self.noReLU:
             self.relu = nn.ReLU(inplace=False)
     
-    def forward(self, x):
+    def forward(self, x: Tensor) -> Tensor:
         x0 = self.branch0(x)
         x1 = self.branch1(x)
         out = torch.cat((x0, x1), 1)
@@ -137,7 +145,7 @@ class Block8(nn.Module):
 
 class Mixed_6a(nn.Module):
     
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         
         self.branch0 = BasicConv2d(256, 384, kernel_size=3, stride=2)
@@ -150,7 +158,7 @@ class Mixed_6a(nn.Module):
         
         self.branch2 = nn.MaxPool2d(3, stride=2)
     
-    def forward(self, x):
+    def forward(self, x: Tensor) -> Tensor:
         x0 = self.branch0(x)
         x1 = self.branch1(x)
         x2 = self.branch2(x)
@@ -161,7 +169,7 @@ class Mixed_6a(nn.Module):
 
 class Mixed_7a(nn.Module):
     
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         
         self.branch0 = nn.Sequential(
@@ -182,7 +190,7 @@ class Mixed_7a(nn.Module):
         
         self.branch3 = nn.MaxPool2d(3, stride=2)
     
-    def forward(self, x):
+    def forward(self, x: Tensor) -> Tensor:
         x0 = self.branch0(x)
         x1 = self.branch1(x)
         x2 = self.branch2(x)
@@ -194,21 +202,38 @@ class Mixed_7a(nn.Module):
 
 class InceptionResnetV1(nn.Module):
     """ Inception Resnet V1 model with optional loading of pretrained weights.
+    
     Model parameters can be loaded based on pretraining on the VGGFace2 or CASIA-Webface
     datasets. Pretrained state_dicts are automatically downloaded on model instantiation if
     requested and cached in the torch cache. Subsequent instantiations use the cache rather than
     redownloading.
     
-    Args:
-        pretrained (string): Optional pretraining dataset. Either 'vggface2' or 'casia-webface'.
-        classify (bool): Whether the model should output classification probabilities or feature embeddings.
-        num_classes (int): Number of output classes. If 'pretrained' is set and num_classes not
-            equal to that used for the pretrained model, the final linear layer will be randomly
-            initialized.
-        dropout_prob (float): Dropout probability.
+    Example:
+        >>> import torch
+        >>> from neuroface import InceptionResnetV1
+        >>> device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+        >>> resnet = InceptionResnetV1(pretrained='vggface2', device=device).eval()
     """
     
-    def __init__(self, pretrained=None, classify=False, num_classes=None, dropout_prob=0.6, device=None):
+    def __init__(
+        self,
+        pretrained: "str | None" = None,
+        classify: bool = False,
+        num_classes: "int | None" = None,
+        dropout_prob: "float | None" = 0.6,
+        device: "torch.device | None" = None
+    ) -> None:
+        """
+        Args:
+            pretrained (string, optional): Optional pretraining dataset. Either 'vggface2' or 'casia-webface'.
+            classify (bool, optional): Whether the model should output classification probabilities or feature embeddings.
+            num_classes (int | None, optional): Number of output classes. If 'pretrained' is set and num_classes not
+                equal to that used for the pretrained model, the final linear layer will be randomly
+                initialized.
+            dropout_prob (float | None, optional): Dropout probability.
+            device (torch.device | None, optional): Object representing device type.
+        """
+        
         super().__init__()
         
         self.pretrained = pretrained
@@ -306,14 +331,14 @@ class InceptionResnetV1(nn.Module):
             self.device = device
             self.to(device)
     
-    def forward(self, x):
+    def forward(self, x: Tensor) -> Tensor:
         """ Calculate embeddings or logits given a batch of input image tensors.
         
         Args:
-            x (torch.tensor): Batch of image tensors representing faces.
+            x (Tensor): Batch of image tensors representing faces.
         
         Returns:
-            torch.tensor: Batch of embedding vectors or multinomial logits.
+            Tensor: Batch of embedding vectors or multinomial logits.
         """
         
         x = self.conv2d_1a(x)
@@ -342,7 +367,10 @@ class InceptionResnetV1(nn.Module):
         return x
 
 
-def get_torch_home():
+def get_torch_home() -> str:
+    """ Get Torch Hub cache directory used for storing downloaded models and weights.
+    """
+    
     torch_home = os.path.expanduser(
         os.getenv(
             'TORCH_HOME',
