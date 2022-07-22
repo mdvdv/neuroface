@@ -226,7 +226,7 @@ def generateBoundingBox(reg: Tensor, probs: List[float], scale: float, thresh: L
     return boundingbox, image_inds
 
 
-def nms_numpy(boxes: np.ndarray, scores: np.ndarray, threshold: float, method: str):
+def nms_numpy(boxes: np.ndarray, scores: np.ndarray, threshold: float, method: str) -> np.ndarray:
     if boxes.size == 0:
         return np.empty((0, 3))
     
@@ -269,7 +269,7 @@ def nms_numpy(boxes: np.ndarray, scores: np.ndarray, threshold: float, method: s
     return pick
 
 
-def batched_nms_numpy(boxes: Tensor, scores, idxs, threshold: float, method: str) -> Tensor:
+def batched_nms_numpy(boxes: Tensor, scores: Tensor, idxs: Tensor, threshold: float, method: str) -> Tensor:
     device = boxes.device
     
     if boxes.numel() == 0:
