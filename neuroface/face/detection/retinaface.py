@@ -193,7 +193,7 @@ class RetinaFace(nn.Module):
         >>> import torch
         >>> from neuroface import RetinaFace
         >>> device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-        >>> retinanet = RetinaFace(pretrained=True, device=device)
+        >>> retinanet = RetinaFace(pretrained=True, device=device).eval()
     """
     
     def __init__(self, pretrained: bool = True, device: "torch.device | None" = None) -> None:
