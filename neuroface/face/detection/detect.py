@@ -1,4 +1,5 @@
 import torch
+from torch import nn, Tensor
 from torch.nn.functional import interpolate
 from torchvision.transforms import functional as F
 from torchvision.ops.boxes import batched_nms
@@ -7,9 +8,10 @@ from PIL import Image
 import numpy as np
 import os
 import cv2
+from typing import Tuple, List
 
 
-def fixed_batch_process(im_data, model):
+def fixed_batch_process(im_data: Tensor, model: nn.Module) -> Tuple:
     batch_size = 512
     out = []
     
@@ -20,7 +22,17 @@ def fixed_batch_process(im_data, model):
     return tuple(torch.cat(v, dim=0) for v in zip(*out))
 
 
-def detect_face(imgs, minsize, pnet, rnet, onet, threshold, factor, device):
+def detect_face(
+    imgs: "np.ndarray | Tensor",
+    minsize: int,
+    pnet: nn.Module,
+    rnet: nn.Module,
+    onet: nn.Module,
+    threshold: List[float],
+    factor: float,
+    device: torch.device
+) -> Tuple[np.ndarray, np.ndarray]:
+    
     if isinstance(imgs, (np.ndarray, torch.Tensor)):
         if isinstance(imgs, np.ndarray):
             imgs = torch.as_tensor(imgs.copy(), device=device)
@@ -181,7 +193,7 @@ def detect_face(imgs, minsize, pnet, rnet, onet, threshold, factor, device):
     return batch_boxes, batch_points
 
 
-def bbreg(boundingbox, reg):
+def bbreg(boundingbox: Tensor, reg: Tensor) -> Tensor:
     if reg.shape[1] == 1:
         reg = torch.reshape(reg, (reg.shape[2], reg.shape[3]))
     
@@ -196,7 +208,7 @@ def bbreg(boundingbox, reg):
     return boundingbox
 
 
-def generateBoundingBox(reg, probs, scale, thresh):
+def generateBoundingBox(reg: Tensor, probs: List[float], scale: float, thresh: List[float]) -> Tuple[Tensor, Tensor]:
     stride = 2
     cellsize = 12
     reg = reg.permute(1, 0, 2, 3)
@@ -214,7 +226,7 @@ def generateBoundingBox(reg, probs, scale, thresh):
     return boundingbox, image_inds
 
 
-def nms_numpy(boxes, scores, threshold, method):
+def nms_numpy(boxes: np.ndarray, scores: np.ndarray, threshold: float, method: str):
     if boxes.size == 0:
         return np.empty((0, 3))
     
@@ -257,7 +269,7 @@ def nms_numpy(boxes, scores, threshold, method):
     return pick
 
 
-def batched_nms_numpy(boxes, scores, idxs, threshold, method):
+def batched_nms_numpy(boxes: Tensor, scores, idxs, threshold: float, method: str) -> Tensor:
     device = boxes.device
     
     if boxes.numel() == 0:
@@ -277,7 +289,7 @@ def batched_nms_numpy(boxes, scores, idxs, threshold, method):
     return torch.as_tensor(keep, dtype=torch.long, device=device)
 
 
-def pad(boxes, w, h):
+def pad(boxes: Tensor, w: int, h: int) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
     boxes = boxes.trunc().int().cpu().numpy()
     
     x = boxes[:, 0]
@@ -293,7 +305,7 @@ def pad(boxes, w, h):
     return y, ey, x, ex
 
 
-def rerec(bboxA):
+def rerec(bboxA: Tensor) -> Tensor:
     h = bboxA[:, 3] - bboxA[:, 1]
     w = bboxA[:, 2] - bboxA[:, 0]
     
@@ -305,13 +317,13 @@ def rerec(bboxA):
     return bboxA
 
 
-def imresample(img, sz):
+def imresample(img: Tensor, sz: "int | Tuple[int, int] | Tuple[int, int, int]") -> Tensor:
     im_data = interpolate(img, size=sz, mode='area')
     
     return im_data
 
 
-def crop_resize(img, box, image_size):
+def crop_resize(img: "np.ndarray | Tensor", box: np.ndarray, image_size: int) -> "np.ndarray | Tensor":
     if isinstance(img, np.ndarray):
         img = img[box[1]:box[3], box[0]:box[2]]
         out = cv2.resize(
@@ -331,35 +343,41 @@ def crop_resize(img, box, image_size):
     return out
 
 
-def save_img(img, path):
+def save_img(img: np.ndarray, path: str) -> None:
     if isinstance(img, np.ndarray):
         cv2.imwrite(path, cv2.cvtColor(img, cv2.COLOR_RGB2BGR))
     else:
         img.save(path)
 
 
-def get_size(img):
+def get_size(img: "np.ndarray | Tensor") -> Tuple:
     if isinstance(img, (np.ndarray, torch.Tensor)):
         return img.shape[1::-1]
     else:
         return img.size
 
 
-def extract_face(img, box, image_size=160, margin=0, save_path=None):
+def extract_face(
+    img: Image,
+    box: np.ndarray,
+    image_size: int = 160,
+    margin: int = 0,
+    save_path: "str | None" = None
+) -> Tensor:
     """ Extract face + margin from PIL Image given bounding box.
     
     Args:
         img (PIL.Image): A PIL Image.
-        box (numpy.ndarray): Four-element bounding box.
-        image_size (int): Output image size in pixels. The image will be square.
-        margin (int): Margin to add to bounding box, in terms of pixels in the final image.
+        box (np.ndarray): Four-element bounding box.
+        image_size (int, optional): Output image size in pixels. The image will be square.
+        margin (int, optional): Margin to add to bounding box, in terms of pixels in the final image.
             Note that the application of the margin differs slightly from the davidsandberg/facenet
             repo, which applies the margin to the original image before resizing, making the margin
             dependent on the original image size.
-        save_path (string): Save path for extracted face image.
+        save_path (str, optional): Save path for extracted face image.
     
     Returns:
-        (torch.tensor): tensor representing the extracted face.
+        Tensor: torch tensor representing the extracted face.
     """
     
     margin = [
