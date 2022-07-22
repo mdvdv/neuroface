@@ -170,6 +170,8 @@ git clone https://github.com/mdvdv/neuroface.git
 <a name='034'></a>
 <h3>3.4 Pose Landmark Detection</h3>
 
+In progress.
+
 <a name='035'></a>
 <h3>3.5 Facial Expression Recognition</h3>
 
