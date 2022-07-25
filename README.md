@@ -63,8 +63,9 @@ git clone https://github.com/mdvdv/neuroface.git
 <a name='003'></a>
 <h2>3. Supported Models</h2>
 
+<details>
 <a name='031'></a>
-<h3>3.1 Face Detection</h3>
+<summary><h3>3.1 Face Detection</h3></summary>
 
 <table>
   <thead>
@@ -113,6 +114,7 @@ git clone https://github.com/mdvdv/neuroface.git
     </tr>
   </tbody>
 </table>
+</details>
 
 <a name='032'></a>
 <h3>3.2 Face Embedding</h3>
