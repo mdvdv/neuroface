@@ -151,8 +151,7 @@ git clone https://github.com/mdvdv/neuroface.git
 </details>
 
 <details>
-<a name='033'></a>
-<summary><h3>3.3 Facial Landmark Detection</h3></summary>
+<summary><h3><a name='033'>3.3 Facial Landmark Detection</a></h3></summary>
 
 <table>
   <thead>
@@ -172,7 +171,9 @@ git clone https://github.com/mdvdv/neuroface.git
     </tr>
   </tbody>
 </table>
+</details>
 
+<details>
 <a name='034'></a>
 <summary><h3>3.4 Pose Landmark Detection</h3></summary>
 
