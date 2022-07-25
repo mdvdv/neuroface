@@ -64,8 +64,7 @@ git clone https://github.com/mdvdv/neuroface.git
 <h2>3. Supported Models</h2>
 
 <details>
-<a name='031'></a>
-<summary><h3>3.1 Face Detection</h3></summary>
+<summary><h3><a name='031'>3.1 Face Detection</a></h3></summary>
 
 <table>
   <thead>
@@ -117,8 +116,7 @@ git clone https://github.com/mdvdv/neuroface.git
 </details>
 
 <details>
-<a name='032'></a>
-<summary><h3>3.2 Face Embedding</h3></summary>
+<summary><h3><a name='032'>3.2 Face Embedding</a></h3></summary>
 
 <table>
   <thead>
@@ -174,8 +172,7 @@ git clone https://github.com/mdvdv/neuroface.git
 </details>
 
 <details>
-<a name='034'></a>
-<summary><h3>3.4 Pose Landmark Detection</h3></summary>
+<summary><h3><a name='034'>3.4 Pose Landmark Detection</a></h3></summary>
 
 <table>
   <thead>
@@ -203,8 +200,7 @@ git clone https://github.com/mdvdv/neuroface.git
 </details>
 
 <details>
-<a name='035'></a>
-<summary><h3>3.5 Facial Expression Recognition</h3></summary>
+<summary><h3><a name='035'>3.5 Facial Expression Recognition</a></h3></summary>
 
 <table>
   <thead>
