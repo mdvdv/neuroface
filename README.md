@@ -171,7 +171,29 @@ git clone https://github.com/mdvdv/neuroface.git
 <a name='034'></a>
 <h3>3.4 Pose Landmark Detection</h3>
 
-In progress.
+<table>
+  <thead>
+    <tr>
+      <th>Model Name</th>
+      <th>Backbone</th>
+      <th colspan="2"><abbr title='Mean Squared Distance'>MSE</abbr> Metric</th>
+      <th>Paper</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2"><b><a href='https://github.com/mdvdv/neuroface/blob/main/neuroface/landmarks/hands.py'>MediaPipe Hands</a></b></td>
+      <td rowspan="2">BlazePalm</td>
+      <td>Light</td>
+      <td>11.83</td>
+      <td rowspan="2"><a href='https://arxiv.org/pdf/2006.10214'>PDF</a></td>
+    </tr>
+    <tr>
+      <td>Full</td>
+      <td>10.05</td>
+    </tr>
+  </tbody>
+</table>
 
 <a name='035'></a>
 <h3>3.5 Facial Expression Recognition</h3>
