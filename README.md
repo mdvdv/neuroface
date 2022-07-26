@@ -83,24 +83,24 @@ git clone https://github.com/mdvdv/neuroface.git
       <td rowspan='4'><a href='https://arxiv.org/pdf/1511.06523v1.pdf'>WiderFace</a></td>
       <td>P-Net</td>
       <td>0.946</td>
-      <td><a href='https://drive.google.com/uc?export=view&id=11il5MJc7VRdpiU_HdstX9Gczdxdb_0M8'>pnet</a> (28 KB)</td>
+      <td><a href='https://drive.google.com/uc?export=view&id=11il5MJc7VRdpiU_HdstX9Gczdxdb_0M8'>P-Net</a> (28 KB)</td>
       <td rowspan='3'><a href='https://kpzhang93.github.io/MTCNN_face_detection_alignment/paper/spl.pdf'>PDF</a></td>
     </tr>
     <tr>
       <td>R-Net</td>
       <td>0.954</td>
-      <td><a href='https://drive.google.com/uc?export=view&id=1ykKHaW6or-bWSgCGXJYV3F2B9vU6U3aM'>rnet</a> (394 KB)</td>
+      <td><a href='https://drive.google.com/uc?export=view&id=1ykKHaW6or-bWSgCGXJYV3F2B9vU6U3aM'>R-Net</a> (394 KB)</td>
     </tr>
     <tr>
       <td>O-Net</td>
       <td>0.954</td>
-      <td><a href='https://drive.google.com/uc?export=view&id=1NDE8q3O741FW960GDxBnuSkPJS3mugfh'>onet</a> (1.5 MB)</td>
+      <td><a href='https://drive.google.com/uc?export=view&id=1NDE8q3O741FW960GDxBnuSkPJS3mugfh'>O-Net</a> (1.5 MB)</td>
     </tr>
     <tr>
       <td><b><a href='https://github.com/mdvdv/neuroface/blob/main/neuroface/face/detection/retinaface.py'>RetinaFace</a></b></td>
       <td>MobileNet V1</td>
       <td>0.914</td>
-      <td><a href='https://drive.google.com/uc?export=view&id=1-AxXlAFoE5KHBy3ugoi3oi9r-X1hYK_B'>mobilenet</a> (1.7 MB)</td>
+      <td><a href='https://drive.google.com/uc?export=view&id=1-AxXlAFoE5KHBy3ugoi3oi9r-X1hYK_B'>RetinaFace</a> (1.7 MB)</td>
       <td><a href='https://arxiv.org/pdf/1905.00641'>PDF</a></td>
     </tr>
     <tr>
@@ -135,14 +135,14 @@ git clone https://github.com/mdvdv/neuroface.git
       <td><a href='https://arxiv.org/pdf/1411.7923'>CASIA-WebFace</a></td>
       <td>Inception</td>
       <td>0.9905</td>
-      <td><a href='https://drive.google.com/uc?export=view&id=1rgLytxUaOUrtjpxCl-mQFGYdUfSWgQCo'>20180408-102900</a> (110.5 MB)</td>
+      <td><a href='https://drive.google.com/uc?export=view&id=1rgLytxUaOUrtjpxCl-mQFGYdUfSWgQCo'>CASIA-WebFace</a> (110.5 MB)</td>
       <td rowspan='2'><a href='https://arxiv.org/pdf/1503.03832.pdf'>PDF</a></td>
     </tr>
     <tr>
       <td><a href='http://www.robots.ox.ac.uk/~vgg/publications/2018/Cao18/cao18.pdf'>VGGFace2</a></td>
       <td>Inception</td>
       <td>0.9965</td>
-      <td><a href='https://drive.google.com/uc?export=view&id=1P4OqfwcUXXuycmow_Fb8EXqQk5E7-H5E'>20180402-114759</a> (106.7 MB)</td>
+      <td><a href='https://drive.google.com/uc?export=view&id=1P4OqfwcUXXuycmow_Fb8EXqQk5E7-H5E'>VGGFace2</a> (106.7 MB)</td>
     </tr>
   </tbody>
 </table>
@@ -219,7 +219,7 @@ git clone https://github.com/mdvdv/neuroface.git
       <td><a href='https://arxiv.org/pdf/1708.03985v4.pdf'>AffectNet-8</a></td>
       <td>ResNet</td>
       <td>0.6209</td>
-      <td><a href='https://drive.google.com/uc?export=view&id=17lzsrHyuSGd2cZuNHdAAPCw6JsrjgFIn'>affecnet</a> (226 MB)</td>
+      <td><a href='https://drive.google.com/uc?export=view&id=17lzsrHyuSGd2cZuNHdAAPCw6JsrjgFIn'>AffectNet-8</a> (226 MB)</td>
       <td><a href='https://arxiv.org/pdf/2109.07270.pdf'>PDF</a></td>
     </tr>
   </tbody>
