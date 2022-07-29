@@ -118,6 +118,8 @@ git clone https://github.com/mdvdv/neuroface.git
 <details open>
 <summary><h3><a name='032'>3.2 Face Embedding</a></h3></summary>
 
+Face recognition models use a multi-dimensional vector representation of a face. NeuroFace provides access to face vectorization directly using Inception-ResNet V1 model.
+
 <table>
   <thead>
     <tr>
