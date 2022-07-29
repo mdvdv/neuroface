@@ -153,6 +153,8 @@ Face recognition models use a multi-dimensional vector representation of a face.
 <details open>
 <summary><h3><a name='033'>3.3 Facial Landmark Detection</a></h3></summary>
 
+NeuroFace provides MediaPipe Face Mesh that estimates 478 3D face landmarks in real-time. Face detector is the same BlazeFace model used in MediaPipe Face Detection.
+
 <table>
   <thead>
     <tr>
