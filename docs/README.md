@@ -76,7 +76,16 @@ image = io.read_image(<select image>).to(device).permute(1, 2, 0)
 
 # Detect faces on images.
 face = mtcnn(image)
+```
 
+Calculating distance between obtained embeddings.
+
+> `0` to select Euclidian distance.
+> `1` to select Euclidian distance with L2 normalization.
+> `2` to select cosine similarity.
+> `3` to select Manhattan distance.
+
+```python
 # Rearrange dimensions (B H W C --> B C H W) and build face embeddings.
 embedding = resnet(face.permute(0, 3, 1, 2))
 
