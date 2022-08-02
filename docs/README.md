@@ -82,14 +82,13 @@ Calculating distance between obtained embeddings.
 
 - `0` to select Euclidian distance:
 
-$$d(p, q)=\sqrt{\sum_{i=1}^{n} (p_i-q_i)^2}.$$.
+$$d(p, q)=\sqrt{\sum_{i=1}^{n} (p_i-q_i)^2}.$$
 
 - `1` to select Euclidian distance with L2 normalization:
 
-$$d(p, q)=\sqrt{\sum_{i=1}^{n} (p_i)^2}.$$.
-$$|p|=\sqrt{\sum_{i=1}^{n} |p_i|^2}.$$.
+$$|q|=\sqrt{\sum_{i=1}^{n} |q_i|^2}, |p|=\sqrt{\sum_{i=1}^{n} |p_i|^2}$$
 
-$$d(p, q)=\sqrt{\sum_{i=1}^{n} (p_i-q_i)^2}.$$.
+$$d(p, q)=\sqrt{\sum_{i=1}^{n} (p_i-q_i)^2}.$$
 
 > `2` to select cosine similarity.
 > 
