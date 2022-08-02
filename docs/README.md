@@ -124,7 +124,20 @@ print(distance(<select embedding>, <select embedding>, distance_metric=<select m
 <a name='003'></a>
 <h2>3. Facial Landmark Detection</h2>
 
-In progress.
+```python
+import cv2
+
+from neuroface import FaceMesh
+
+# Initialize FaceMesh.
+model = FaceMesh(static_image_mode=True, max_num_faces=1)
+
+# Upload image.
+image = cv2.imread(<select image>)
+
+# Detect facial landmarks.
+face_array = model.detect(image)
+```
 
 <a name='004'></a>
 <h2>4. Pose Landmark Detection</h2>
