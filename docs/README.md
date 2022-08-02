@@ -92,7 +92,7 @@ $$d(p, q)=\sqrt{\sum_{i=1}^{n} (|p|_i-|q|_i)^2}.$$
 
 - `2` to select cosine similarity.
 
-$$d(p, q)=\frac{\sum_{i=1}^{n} p_{i}q_{i}}{\sqrt{\sum_{i=1}^{n} p_{i}^2}\sqrt{\sum_{i=1}^{n} q_{i}^2}}.$$
+$$d(p, q)=\frac{\sum_{i=1}^{n} (p_{i}*q_{i})}{\sqrt{\sum_{i=1}^{n} (p_{i}^2)}*\sqrt{\sum_{i=1}^{n} (q_{i}^2})}.$$
 
 - `3` to select Manhattan distance:
 
