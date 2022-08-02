@@ -55,7 +55,7 @@ for box in boxes:
 <a name='002'></a>
 <h2>2. Face Comparison</h2>
 
-Building face embeddings using [InceptionResnetV1](https://arxiv.org/pdf/1503.03832.pdf) pretrained on [VGGFace2](https://www.robots.ox.ac.uk/~vgg/publications/2018/Cao18/cao18.pdf) dataset.
+Face recognition models use a multi-dimensional vector representation of a face. NeuroFace provides access to face vectorization directly using [InceptionResnetV1](https://arxiv.org/pdf/1503.03832.pdf) pretrained on [VGGFace2](https://www.robots.ox.ac.uk/~vgg/publications/2018/Cao18/cao18.pdf) dataset.
 
 ```python
 import torch
