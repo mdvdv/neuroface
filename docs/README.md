@@ -91,8 +91,10 @@ $$|p|=\sqrt{\sum_{i=1}^{n} |p_i|^2}, |q|=\sqrt{\sum_{i=1}^{n} |q_i|^2}$$
 $$d(p, q)=\sqrt{\sum_{i=1}^{n} (|p|_i-|q|_i)^2}.$$
 
 > `2` to select cosine similarity.
-> 
-> `3` to select Manhattan distance.
+
+- `3` to select Manhattan distance:
+
+$$d(p, q)=\sum_{i=1}^{n} |p_i-q_i|.$$
 
 ```python
 # Rearrange dimensions (B H W C --> B C H W) and build face embeddings.
