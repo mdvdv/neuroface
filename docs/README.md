@@ -81,8 +81,11 @@ face = mtcnn(image)
 Calculating distance between obtained embeddings.
 
 > `0` to select Euclidian distance.
+> 
 > `1` to select Euclidian distance with L2 normalization.
+> 
 > `2` to select cosine similarity.
+> 
 > `3` to select Manhattan distance.
 
 ```python
