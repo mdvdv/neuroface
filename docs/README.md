@@ -84,7 +84,7 @@ Calculating distance between obtained embeddings.
 
 $$d(p,q)=\sqrt{(p_1-q_1)^2+(p_2-q_2)^2+...+(p_{i-1}-q_{i-1})^2+(p_i-q_i)^2}$$.
 
-$$d(p,q)=\sum_{i=1}^{n} (p_i-q_i)^2$$.
+$$d(p, q)=\sqrt{\sum_{i=1}^{n} (p_i-q_i)^2}$$.
 
 - `1` to select Euclidian distance with L2 normalization:
 > 
