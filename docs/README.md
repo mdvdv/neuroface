@@ -52,6 +52,8 @@ for box in boxes:
 
 <img src="https://user-images.githubusercontent.com/83948828/180439690-87f57d46-d0a1-4954-8041-9b6a2b374a7f.jpg" width="224"/>
 
+Face detection and extracting on raw images using MediaPipe Face Detection implementation.
+
 ```python
 import cv2
 
