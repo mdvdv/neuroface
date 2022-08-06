@@ -52,6 +52,23 @@ for box in boxes:
 
 <img src="https://user-images.githubusercontent.com/83948828/180439690-87f57d46-d0a1-4954-8041-9b6a2b374a7f.jpg" width="224"/>
 
+```python
+import cv2
+
+from neuroface import FaceDetection
+
+# Initialize FaceMesh.
+model = FaceDetection()
+
+# Upload image.
+image = cv2.imread(<select image>)
+
+# Detect facial landmarks.
+face_batch = model.extract(image)
+```
+
+![out](https://user-images.githubusercontent.com/83948828/183244226-256ae3de-99ee-4e00-b494-90c869434daa.jpg)
+
 <a name='002'></a>
 <h2>2. Face Comparison</h2>
 
