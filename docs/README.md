@@ -67,7 +67,7 @@ image = cv2.imread(<select image>)
 face_batch = model.extract(image)
 ```
 
-![out](https://user-images.githubusercontent.com/83948828/183244226-256ae3de-99ee-4e00-b494-90c869434daa.jpg)
+<img src="https://user-images.githubusercontent.com/83948828/183244226-256ae3de-99ee-4e00-b494-90c869434daa.jpg" width="224"/>
 
 <a name='002'></a>
 <h2>2. Face Comparison</h2>
