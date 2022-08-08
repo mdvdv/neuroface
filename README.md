@@ -9,11 +9,11 @@
 NeuroFace is a Python framework containing tools for human face detection, recognition, analysis of human facial expressions and gestures on video.
 
 <div align="center">
-    <img align="center" src="https://img.shields.io/github/repo-size/mdvdv/neuroface" alt="GitHub Repo Size">
-    <img align="center" src="https://img.shields.io/github/stars/mdvdv/neuroface" alt="GitHub Repo Stars">
-    <img align="center" src="https://img.shields.io/github/watchers/mdvdv/neuroface" alt="GitHub Watchers">
-    <img align="center" src="https://img.shields.io/github/last-commit/mdvdv/neuroface" alt="GitHub Last Commit">
-    <img align="center" src="https://img.shields.io/github/languages/top/mdvdv/neuroface" alt="GitHub Top Language">
+    <img align="center" src="https://img.shields.io/github/repo-size/mdvdv/neuroface/main" alt="GitHub Repo Size">
+    <img align="center" src="https://img.shields.io/github/stars/mdvdv/neuroface/main" alt="GitHub Repo Stars">
+    <img align="center" src="https://img.shields.io/github/watchers/mdvdv/neuroface/main" alt="GitHub Watchers">
+    <img align="center" src="https://img.shields.io/github/last-commit/mdvdv/neuroface/main" alt="GitHub Last Commit">
+    <img align="center" src="https://img.shields.io/github/languages/top/mdvdv/neuroface/main" alt="GitHub Top Language">
 </div>
 
 <a name='000'></a>
