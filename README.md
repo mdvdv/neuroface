@@ -6,7 +6,7 @@
 
 ---
 
-NeuroFace is a Python framework containing tools for detection, human face recognition, analysis of human facial expressions and gestures on video.
+NeuroFace is a Python framework containing tools for human face detection, recognition, analysis of human facial expressions and gestures on video.
 
 <div align="center">
     <img align="center" src="https://img.shields.io/github/repo-size/mdvdv/neuroface" alt="GitHub Repo Size">
@@ -55,19 +55,27 @@ NeuroFace is a Python framework containing tools for detection, human face recog
 
 <h4>System requirements:</h4>
 
-- [**CUDA**](https://developer.nvidia.com/cuda-downloads) >= **11.3**: GPU compute access.
+- [**CUDA**](https://developer.nvidia.com/cuda-downloads) ≥ **11.3**: GPU compute access.
 
-<h4>Quick installation:</h4>
+<h4>Quick dependency installation:</h4>
 
 ```python
-pip install -r requirements.txt
+$ pip install -r requirements.txt
 ```
 
 <a name='002'></a>
 <h2>2. Installation</h2>
 
+a. Installing the repository as a module:
+
 ```python
-git clone https://github.com/mdvdv/neuroface.git
+$ pip install git+https://github.com/mdvdv/neuroface.git
+```
+
+b. Cloning the repository into a project:
+
+```python
+$ git clone https://github.com/mdvdv/neuroface.git
 ```
 
 <a name='003'></a>
