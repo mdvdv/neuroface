@@ -4,7 +4,7 @@ setup(
     name='neuroface',
     namespace_packages=['neuroface'],
     version='0.1.0',
-    url='https://github.com/mdvdv/neuroface.git',
+    url='https://github.com/mdvdv/neuroface',
     description='Human face detection, recognition on video.',
     packages=find_packages(),    
     install_requires=[
