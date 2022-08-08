@@ -6,6 +6,8 @@
 
 ---
 
+NeuroFace is a Python framework containing tools for detection, human face recognition, analysis of human facial expressions and gestures on video.
+
 <div align="center">
     <img align="center" src="https://img.shields.io/github/repo-size/mdvdv/neuroface" alt="GitHub Repo Size">
     <img align="center" src="https://img.shields.io/github/stars/mdvdv/neuroface" alt="GitHub Repo Stars">
@@ -13,9 +15,6 @@
     <img align="center" src="https://img.shields.io/github/last-commit/mdvdv/neuroface" alt="GitHub Last Commit">
     <img align="center" src="https://img.shields.io/github/languages/top/mdvdv/neuroface" alt="GitHub Top Language">
 </div>
-
-
-NeuroFace is a Python framework containing tools for detection, human face recognition, analysis of human facial expressions and gestures on video.
 
 <a name='000'></a>
 <h2>Table of Contents</h2>
