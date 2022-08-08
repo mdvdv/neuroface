@@ -53,11 +53,11 @@ NeuroFace is a Python framework containing tools for human face detection, recog
 
 - [**gdown**](https://github.com/wkentaro/gdown) ≥ **4.5.1**: Downloading large files from Google Drive.
 
-<h4>System requirements:</h4>
+System requirements:
 
 - [**CUDA**](https://developer.nvidia.com/cuda-downloads) ≥ **11.3**: GPU compute access.
 
-<h4>Quick dependency installation:</h4>
+Quick dependency installation:
 
 ```python
 $ pip install -r requirements.txt
