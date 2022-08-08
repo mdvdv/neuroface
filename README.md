@@ -66,13 +66,7 @@ $ pip install -r requirements.txt
 <a name='002'></a>
 <h2>2. Installation</h2>
 
-a. Installing the repository as a submodule:
-
-```python
-$ git submodule add https://github.com/mdvdv/neuroface.git
-```
-
-b. Cloning the repository into a project:
+Cloning the repository into a project:
 
 ```python
 $ git clone https://github.com/mdvdv/neuroface.git
