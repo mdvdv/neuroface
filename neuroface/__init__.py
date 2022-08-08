@@ -1,3 +1,5 @@
+__import__('pkg_resources').declare_namespace(__name__)
+
 from .face.detection.mtcnn import MTCNN
 from .face.detection.face_detection import FaceDetection
 from .face.detection.retinaface import RetinaFace
