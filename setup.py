@@ -2,7 +2,6 @@ from setuptools import setup, find_packages
 
 setup(
     name='neuroface',
-    namespace_packages=['neuroface'],
     version='0.1.0',
     url='https://github.com/mdvdv/neuroface',
     description='Human face detection, recognition on video.',
@@ -15,5 +14,6 @@ setup(
       'numpy>=1.23.1',
       'Pillow>=9.2.0',
       'av>=9.2.0',
-      'gdown>=4.5.1],
+      'gdown>=4.5.1'
+    ],
 )
