@@ -11,12 +11,11 @@ setup(
     url=URL
     description=DESCRIPTION,
     packages={
-        'neuroface.neuroface',
-        'neuroface.neuroface.emotions',
-        'neuroface.neuroface.face',
-        'neuroface.neuroface.face.comparison',
-        'neuroface.neuroface.face.detection',
-        'neuroface.neuroface.landmarks',
+        'emotions',
+        'face',
+        'face.comparison',
+        'face.detection',
+        'landmarks',
     ],
     install_requires=[
       'torch>=1.12.0',
