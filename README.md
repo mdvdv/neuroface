@@ -116,7 +116,7 @@ $ git clone https://github.com/mdvdv/neuroface.git
       <td><a href='https://arxiv.org/pdf/1905.00641'>PDF</a></td>
     </tr>
     <tr>
-      <td><b><a href='https://github.com/mdvdv/neuroface/blob/main/neuroface/face/detection/mediapipe_face.py'>MediaPipe Face</a></b></td>
+      <td><b><a href='https://github.com/mdvdv/neuroface/blob/main/neuroface/face/detection/face_detection.py'>MediaPipe Face</a></b></td>
       <td>-</td>
       <td>BlazeFace</td>
       <td>0.9861</td>
