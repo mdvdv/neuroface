@@ -9,7 +9,7 @@ import gdown
 from typing import Tuple
 
 
-class AttentionResnet(nn.Module):
+class DAN(nn.Module):
     """ Distract Your Attention Network implementation.
     
     Distract Your Attention Network performs facial expression recognition on torch tensor face images.
