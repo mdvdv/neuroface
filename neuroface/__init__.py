@@ -4,4 +4,4 @@ from .face.detection.retinaface import RetinaFace
 from .face.comparison.inception_resnet_v1 import InceptionResnetV1
 from .landmarks.face_mesh import FaceMesh
 from .landmarks.hands import Hands
-from .emotions.attention_resnet import AttentionResnet
+from .emotions.dan import DAN
